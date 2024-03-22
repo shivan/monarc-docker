@@ -1,0 +1,30 @@
+# docker-compose.yml
+version: '3.7'
+
+services:
+  monarc:
+    build: .
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+    environment:
+      - MONARC_VERSION=v2.12.6
+    volumes:
+      - monarc_data:/var/lib/monarc/fo-data
+
+  db:
+    image: mariadb:10.5
+    environment:
+      - MYSQL_ROOT_PASSWORD=tops3cret§
+      - MYSQL_DATABASE=monarc_cli
+      - MYSQL_USER=monarc
+      - MYSQL_PASSWORD=anothers3cret!
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
+  monarc_data:
