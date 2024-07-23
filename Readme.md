@@ -24,7 +24,7 @@ Environment variables:
 |MYSQL_ROOT_PASSWORD|yyyy|
 |MYSQL_DATABASE|monarc_cli|
 |MYSQL_USER|monarc|
-|MYSQL_PASSWORD|xxxx|
+|MYSQL_PASSWORD|anothers3cret!|
 
 Storage mounted to: /var/lib/mysql
 
@@ -52,3 +52,5 @@ Url: http://monarc.myserver.cloud/
 Target service: monarc
 
 ingress class: nginx
+
+MONARC application and usually login: admin@admin.localhost, password: admin
